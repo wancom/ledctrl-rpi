@@ -1,0 +1,12 @@
+[Unit]
+Description=Power LED control
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "/usr/local/lib/ledctrl/start"
+ExecStop=/bin/true
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
